@@ -1,0 +1,93 @@
+.video_container{
+    /* position: relative; */
+    /* width: 100%;
+    min-height: 100vh;*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    /*justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;  */
+}
+
+.video{
+    position: relative;
+    /* min-width: 80%; */
+    width: 450px;
+}
+
+.video_user{
+    width: 450px;
+    height: 250px;
+    outline: 1px solid red;
+}
+
+.button_access{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.buttons_controls{
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.buttons_controls button{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+ion-icon{
+    font-size: 0.9rem;
+}
+
+.recording_containON{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30%;
+}
+.recording_containOFF{
+    display: none;
+}
+.recordingOFF{
+    display: none;
+}
+.recordingON{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(193, 6, 6);
+    animation: recording 1s linear infinite;
+}
+
+@keyframes recording {
+    0%{
+        background-color: rgb(193, 6, 6);
+    }
+    50%{
+        background-color: rgba(193, 6, 6, 0.601);
+    }
+    100%{
+        background-color: rgb(193, 6, 6);
+    }
+}
+
+@media (max-width: 600px){
+    .video_user{
+        width: 100%;
+        height: 400px;
+    }
+}
