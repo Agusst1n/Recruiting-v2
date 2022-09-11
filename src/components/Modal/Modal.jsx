@@ -6,7 +6,8 @@ import Video from '../VIdeo/Video'
 import styles from './Modal.module.css'
 
 const Modal = () => {
-   
+
+
   const {
     downloadLink,
     setDownloadLink,
@@ -24,6 +25,8 @@ const Modal = () => {
     setQuestionsState,
     resultQuestions,
     setResultQuestions,
+    setShow,
+    setRepliedLastQuestion
   } = useContext(QuestionsContext)
 
   const closeModal = () =>{
@@ -35,10 +38,11 @@ const Modal = () => {
 
   useEffect(()=>{
 
-    getNewQuestion()
+    getNewQuestion() //*Se va a ejecutar cuando cargue la app
     checkLength()
 
-  },[questionsState,recordVideo])
+
+  },[questionsState,recordVideo]) //!Cuando se actualiza
 
   const getNewQuestion = () =>{
 
@@ -62,8 +66,13 @@ const Modal = () => {
   const return_button = () =>{
     setModalStatus(false)
   }
+
   
   const pushQuestion = () => {
+    console.log(newQuestion, 'newQuestion??????????????')
+    console.log(resultQuestions, '8888888')
+
+    console.log(Question, 'question', newQuestion, 'newQuestion', downloadLink, 'video')
 
     setResultQuestions([...resultQuestions,{
       question: Question? Question : newQuestion,
@@ -77,8 +86,6 @@ const Modal = () => {
       setQuestionStateLength(true)
     }
 
-    console.log(questionsStateActualizado, 'Actualizad2')
-
     setDownloadLink("") //vacio el video
     setStop(false)
     getUserMedia()
@@ -86,29 +93,29 @@ const Modal = () => {
     setRecordVideo(false)
 
     if(questionStateLength){
-      console.log('oka');
+      setShow(true)
       setModalStatus(false)
+
+      console.log('Aca hay que pushear la data')
+
+      setRepliedLastQuestion(true)
     }
 
   }
   
   const recoverQuestion = () =>{
-    console.log(resultQuestions, 'q')
 
     let anterior = resultQuestions.slice(-1)
     let resultQuestionsFilter = resultQuestions.pop()
 
     let info = anterior[0].question
 
-    console.log(resultQuestionsFilter, '222');
-
-    console.log(anterior[0], 'anterior')
-
     setQuestionsState([info,...questionsState])
   }
 
 
   const checkLength = () =>{
+    console.log('chekeeandooo');
     if(resultQuestions.length === 0){
       setInitialQuestionLength(true)
     }else{
@@ -125,6 +132,7 @@ const Modal = () => {
               <ion-icon name="arrow-back-outline"></ion-icon> Volver
             </button>
           </div>
+
           <div className={styles.question_value}>
             <p>{Question?.value}</p>
           </div>

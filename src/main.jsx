@@ -7,10 +7,10 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <VideoProvider>
-      <QuestionsProvider>
-        <App />
-      </QuestionsProvider>
-    </VideoProvider>
+      <VideoProvider>
+        <QuestionsProvider>
+          <App />
+        </QuestionsProvider>
+      </VideoProvider>
   </React.StrictMode>
 )

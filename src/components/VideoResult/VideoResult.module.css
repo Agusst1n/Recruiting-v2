@@ -6,16 +6,29 @@
 
 .VideoResult{
     position: relative;
-    width: 250px;
-    height: 300px;
+    width: 200px;
+    height: 250px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.751);
+    /* background-color: rgba(255, 255, 255, 0.751); */
+    background-color: white;
     border-radius: 10px;
     color: rgba(0, 0, 0, 0.754);
+}
+
+.remove_video{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    z-index: 2;
+}
+.remove_video:hover{
+    transform: scale(1.1);
+    transition: .5s;
 }
 
 video{
@@ -32,6 +45,9 @@ video{
     align-items: center;
     width: 100%;
     height: 20%;
+    background-color: #093A3E;
+    color: rgba(255, 255, 255, 0.881);
+    /* border-bottom-left-radius:10px ; */
 }
 
 .button_play{

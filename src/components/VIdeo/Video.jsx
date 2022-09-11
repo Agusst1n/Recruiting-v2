@@ -25,18 +25,18 @@ function Video() {
 
   useEffect(function() {
     getUserMedia()
-    console.log('actualizando')
+    // console.log('actualizando')
     if (isRecording) {
       return;
     }
     if (chunks.current.length === 0) {
-      console.log('entre al chunks length', chunks.current.length)
+      // console.log('entre al chunks length', chunks.current.length)
       return;
     }
     const blob = new Blob(chunks.current, {
       type: "video/x-matroska;codecs=avc1,opus",
     });
-    console.log('actualice el estado link video');
+    // console.log('actualice el estado link video');
     setDownloadLink(URL.createObjectURL(blob));
     chunks.current = [];
   }, [isRecording, stateChunk])

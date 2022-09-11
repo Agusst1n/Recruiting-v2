@@ -6,7 +6,7 @@ import styles from './Question.module.css'
 
 const Question = (question) => {
 
-  const {setModalStatus,setActualQuestion} = useContext(QuestionsContext)
+  const {setModalStatus,setActualQuestion,setLottieClick} = useContext(QuestionsContext)
 
   const {name,id,value} = question.question
 
@@ -16,10 +16,14 @@ const Question = (question) => {
     setActualQuestion(id)
   }
 
+  const closeLottieClick = () =>{
+    setLottieClick(false)
+    console.log('onmouse')
+  }
+
   return (
     <div className={styles.question} onClick={modal} id={id}> 
-        <label htmlFor={name}>{value}</label>
-        <input type="checkbox" name={name} disabled />
+        <p onMouseEnter={closeLottieClick}>{value}</p>
     </div>
   )
 }

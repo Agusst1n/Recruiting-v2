@@ -23,25 +23,24 @@ const VideoProvider = ({ children }) => {
 
     const [videoTime, setVideoTime] = useState(0)
 
-    let interval
+    const intervalRef = useRef();
 
 
 
    const rec = (value) =>{
 
     if(value){
-      let count = 0
-       interval = setInterval(() => {
+       let count = 0
+       const id = setInterval(() => {
 
         if(count >= 120){
-          clearInterval(interval)
-          interval= null
+
+          clearInterval(intervalRef.current)
 
           if (!streamRecorderRef.current) {
             return;
           }
           streamRecorderRef.current.stop();
-          console.log('pare el video el chunk esta', chunks.current.length)
           setRecordVideo(true)
           setIsRecording(false);
           setStop(true)
@@ -49,17 +48,17 @@ const VideoProvider = ({ children }) => {
 
           return
         }else{
-          console.log(count)
           count++
           setVideoTime(count)
         }
         
       }, 1000);
+
+      intervalRef.current = id;
       
     }else{
       console.log('false')
-      clearInterval(interval) //!No funciona :C
-      interval= null
+      clearInterval(intervalRef.current) //!No funciona :C
     }
    }
 
@@ -74,7 +73,6 @@ const VideoProvider = ({ children }) => {
       .getUserMedia(constraints)
       .then((stream) => {
         streamRef.current = stream;
-        console.log(stream, 'stream');
         localVideoRef.current.srcObject = stream;
       })
       .catch((error) => {
@@ -94,7 +92,6 @@ const VideoProvider = ({ children }) => {
     
     //!Empieza a grabar
     const startRecording = () =>{
-      console.log('entre al recording');
 
       if (isRecording) {
         return;
@@ -103,20 +100,13 @@ const VideoProvider = ({ children }) => {
         return;
       }
   
-      console.log('video iniciado');
   
       streamRecorderRef.current = new MediaRecorder(streamRef.current);
       streamRecorderRef.current.start();
       streamRecorderRef.current.ondataavailable =  (event) =>{
         if (chunks.current) {
-          console.log('entre al chunks' , chunks.current)
-
-          
           chunks.current.push(event.data);
           setStateChunk(event.data)
-          console.log('pushee event data', event.data);
-          console.log('longitud del chunk', chunks.current.length)
-  
         }
       };
       setIsRecording(true);

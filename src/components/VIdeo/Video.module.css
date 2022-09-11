@@ -22,7 +22,9 @@
 .video_user{
     width: 450px;
     height: 250px;
-    outline: 1px solid red;
+    outline: 1px solid white;
+    /* background-image: url('https://media.geeksforgeeks.org/wp-content/uploads/20200412121906/skeleton-loading.gif');
+    background-position: center; */
 }
 
 .button_access{
