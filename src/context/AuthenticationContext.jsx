@@ -13,6 +13,8 @@ const AuthenticationProvider = ({ children }) => {
 
   const {resultQuestions,setResultQuestions,setQuestionsState} = useContext(QuestionsContext)
 
+  const [passwordLength, setPasswordLength] = useState(false)
+
   const [doneStatus, setDoneStatus] = useState(false)
 
   const KEY = 'AIzaSyBN-kqMVcMWr3CP1wPu2vZmgwrDUE8L1qI'
@@ -84,7 +86,15 @@ const AuthenticationProvider = ({ children }) => {
     if (Object.values(user).includes('')) {
       console.log('campos vacios');
     } else if (user.password === user.password2) {
-      registerData();
+      if(user.password.length >=6){
+        registerData();
+      }else{
+        console.log('La password debe ser mayor a 6 caracteres')
+        setPasswordLength(true)
+        setTimeout(()=>{
+          setPasswordLength(false)
+        },2000)
+      }
     } else {
       console.log('campos incorrectos');
     }
@@ -176,7 +186,9 @@ const AuthenticationProvider = ({ children }) => {
         userToken,
         getResponses,
         setDoneStatus,
-        doneStatus
+        doneStatus,
+        passwordLength,
+        setPasswordLength
       }}
     >
       {children}

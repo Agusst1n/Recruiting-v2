@@ -35,6 +35,7 @@
 }
 
 .register_card{
+    position: relative;
     width: 320px;
     height: 400px;
     display: flex;
@@ -93,4 +94,32 @@
 .login_link_container{
     width: 310px;
     height: 40px;
+}
+
+.password_warning{
+    position: absolute;
+    width: 200px;
+    outline: 1px solid red;
+    font-size: 1rem;
+    left: 20%;
+    top: 50%;
+    animation: warning 2s linear infinite;
+}
+
+@keyframes warning {
+    0%{
+        transform: translateY(-5%);
+    }
+    25%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(5%);
+    }
+    75%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-5%);
+    }
 }
