@@ -39,7 +39,7 @@ const Modal = () => {
   useEffect(()=>{
 
     getNewQuestion() //*Se va a ejecutar cuando cargue la app
-    // checkLength()
+    checkLength()
 
 
   },[questionsState,recordVideo]) //!Cuando se actualiza
@@ -92,7 +92,7 @@ const Modal = () => {
 
     setRecordVideo(false)
 
-    checkLength()
+    // checkLength()
 
     if(questionStateLength){
       setShow(true)

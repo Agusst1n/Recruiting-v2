@@ -131,14 +131,10 @@ const AuthenticationProvider = ({ children }) => {
   };
 
   const getResponses = async () => {
-    // console.log('Ejecutando', userToken.idToken)
     try {
       let user = JSON.parse(localStorage.getItem('user'))
 
       const res = await fetch(`https://video-record-19df8-default-rtdb.firebaseio.com/users/${user.localId}.json?auth=${user.idToken}`)
-      // const res = await fetch(                                                   //userToken.idToken
-      //   `https://video-record-19df8-default-rtdb.firebaseio.com/users.json?auth=${userToken.idToken}`
-      // );
 
       const data = await res.json();
 
@@ -152,8 +148,12 @@ const AuthenticationProvider = ({ children }) => {
 
         setResultQuestions(info)
         // setResultQuestions([])
-        console.log(data[i].done, 'infoo');
-        setDoneStatus(data[i].done)
+        if(data[i].done==false) {
+          setDoneStatus(false)
+        }else{
+          console.log(data[i].done, 'infoo');
+          setDoneStatus(data[i].done)
+        }
 
       }
     } catch (error) {

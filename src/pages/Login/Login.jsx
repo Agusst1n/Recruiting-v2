@@ -44,7 +44,7 @@ function Login() {
       </div>
     </div>
     <div className={styles.manPc_image}>
-      <img src={manPc} alt="" width={200}/>
+      <img src={manPc} alt="" width={270}/>
     </div>
   </div>;
 }

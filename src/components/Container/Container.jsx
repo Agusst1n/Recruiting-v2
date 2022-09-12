@@ -30,7 +30,6 @@ const Container = () => {
     toggle_navbar,
     pauseConfetti,
     secondLottie,
-    // questionsFunc,
     repliedLastQuestion,
     setQuestionsState
   } = useContext(QuestionsContext);
@@ -69,6 +68,11 @@ const Container = () => {
 
     if(JSON.parse(localStorage.getItem('user'))){
       console.log('recargando');
+
+      if(questionsState?.length >0){
+        console.log('hay preguntas')
+        setDoneStatus(false)
+      }
   
       setHeight(window.innerHeight);
       setWidth(window.innerWidth);
@@ -89,15 +93,16 @@ const Container = () => {
           return;
         } else {
           console.log('entreee');
-          // questionsFunc(); // cuando responda todas las preguntas se va a ejecutar otra vez
         }
+      }else{
+        console.log('paso a false');
       }
       
     }else{
       navigate('/')
     }
 
-  }, [questionsState, show, doneStatus]);
+  }, [questionsState, show]);
 
   return (
     <div className={styles.container}>
@@ -115,26 +120,6 @@ const Container = () => {
           ) : (
             <img src={thinking} height={250}/>
           )}
-          {/* {questionsState.length > 0 && (
-            <Lottie-player
-              src="https://assets2.lottiefiles.com/packages/lf20_e3q4w80w.json"
-              background="transparent"
-              speed="1"
-              style={{ width: '200px' }}
-              loop
-              autoplay
-            ></Lottie-player>
-          )} */}
-          {/* {secondLottie && (
-            <Lottie-player
-              src="https://assets5.lottiefiles.com/private_files/lf30_oz2evqgk.json"
-              background="transparent"
-              speed="1"
-              style={{ width: '200px' }}
-              loop
-              autoplay
-            ></Lottie-player>
-          )} */}
         </div>
         {doneStatus ? <h2>Hola no hay preguntas</h2> : <Questions />}
       </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&display=swap');
+
 .container{
     position: relative;
     width: 100%;
@@ -7,6 +9,7 @@
     align-items: center;
     background-color: red;
     overflow: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 .your_questions{
@@ -108,7 +111,7 @@
 .toggle_navbar{
     position: absolute;
     cursor: pointer;
-    top: 10px;
+    top: 5px;
     right: 5px;
     height: 25px;
     width: 25px;
