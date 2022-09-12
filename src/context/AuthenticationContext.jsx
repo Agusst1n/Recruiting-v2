@@ -117,6 +117,9 @@ const AuthenticationProvider = ({ children }) => {
       email: '',
       password: ''
     });
+
+    setResultQuestions([])
+    setDoneStatus(false)
     navigate('/');
   };
 
@@ -132,7 +135,7 @@ const AuthenticationProvider = ({ children }) => {
     try {
       let user = JSON.parse(localStorage.getItem('user'))
 
-      const res = await fetch(`https://video-record-19df8-default-rtdb.firebaseio.com/users.json?auth=${user.idToken}`)
+      const res = await fetch(`https://video-record-19df8-default-rtdb.firebaseio.com/users/${user.localId}.json?auth=${user.idToken}`)
       // const res = await fetch(                                                   //userToken.idToken
       //   `https://video-record-19df8-default-rtdb.firebaseio.com/users.json?auth=${userToken.idToken}`
       // );
@@ -144,6 +147,8 @@ const AuthenticationProvider = ({ children }) => {
       for (let i in data) {
         console.log(i);
         let info = data[i].resultQuestions
+
+        console.log(info, 'infooo');
 
         setResultQuestions(info)
         // setResultQuestions([])

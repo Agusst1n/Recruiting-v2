@@ -1,20 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&display=swap');
+
 .login_container{
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: white; */
+    background-image: url('https://res.cloudinary.com/dx0bwa7xp/image/upload/v1662947041/bg_rqk0mi.png');
+    background-size:cover;
+    background-position: center;
+    animation: opacity 7s linear infinite;
+    font-family: 'Poppins', sans-serif;
+}
+@keyframes opacity{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.8;
+    }
+    75%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.login_title{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: rgba(255, 255, 255, 0.781);
 }
 
 .login_form{
-    width: 350px;
+    width: 320px;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: rgba(250, 235, 215, 0.597);
+    background-color: #093A3E;
+    border-radius: 10px;
+}
+
+.login_form input{
+    border-top:none ;
+    border-right:none ;
+    border-left:none ;
+    height: 30px;
+    color: rgba(255, 255, 255, 0.783);
+    font-size: 1.1rem;
+    background-color: rgba(0, 0, 0, 0.591);
 }
 
 .form{
@@ -22,7 +66,44 @@
     flex-direction: column;
     gap: 20px;
 }
+
 .register_link{
     text-decoration: none;
     color: white;
 }
+
+.girlPc_image{
+    position: absolute;
+    left: 30px;
+    animation: jump 5s linear infinite;
+}
+
+@keyframes jump{
+    0%{
+        transform: translateY(-5%);
+    }
+    25%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(5%);
+    }
+    75%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-5%);
+    }
+}
+
+.manPc_image{
+    position: absolute;
+    right: 30px;
+    animation: jump 5s linear infinite;
+}
+/* .login_blob{
+    background-image: url('https://res.cloudinary.com/dx0bwa7xp/image/upload/v1662945682/blob_cvppsl.png');
+    width: 80%;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */

@@ -19,7 +19,10 @@
     align-items: center;
     /* background-color: #220e24; */
     /* background-color: #8E0E00; */
-    background-color: #093A3E;
+    /* background-color: #093A3E; */
+    background-image: url('https://res.cloudinary.com/dx0bwa7xp/image/upload/v1662949176/13_Pro_-_3_qlozxy.jpg');
+    background-size: cover;
+    background-position: center;
     overflow-y: scroll;
     padding: 20px 0 0 0px;
     color: #ffffff;
@@ -53,10 +56,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: black; */
-    /* background-color: #1F1C18;] */
     background-color: #001011;
-    color: rgba(255, 255, 255, 0.835);
+    /* color: rgba(255, 255, 255, 0.835); */
+    background-image: url('https://res.cloudinary.com/dx0bwa7xp/image/upload/v1662948904/bg2_e9k2go.jpg');
+    background-size: cover;
+    background-position: center;
     overflow-y: scroll;
     overflow-x: hidden;
 }

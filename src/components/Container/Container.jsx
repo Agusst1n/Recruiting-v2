@@ -45,8 +45,9 @@ const Container = () => {
 
   const pushDataFirebase = async () => {
     try {
+      console.log(userToken, 'USER TOKEEEN')
       const res = await fetch(
-        `https://video-record-19df8-default-rtdb.firebaseio.com/users.json?auth=${userToken.idToken}`,
+        `https://video-record-19df8-default-rtdb.firebaseio.com/users/${userToken.localId}.json?auth=${userToken.idToken}`,
         {
           method: 'POST',
           body: JSON.stringify({
@@ -83,6 +84,7 @@ const Container = () => {
           if (pushToFirebase) {
             pushDataFirebase();
             setPushToFirebase(false);
+            setDoneStatus(true)
           }
           return;
         } else {
@@ -95,12 +97,6 @@ const Container = () => {
       navigate('/')
     }
 
-
-    // if(doneStatus){
-    //   console.log('VOYY A LIMPIAR')
-    //   setQuestionsState([])
-    //   setDoneStatus(false)
-    // }
   }, [questionsState, show, doneStatus]);
 
   return (
