@@ -69,7 +69,7 @@ const Container = () => {
 
   useEffect(() => {
 
-    if(JSON.parse(localStorage.getItem('user'))){
+    // if(JSON.parse(localStorage.getItem('user'))){
       console.log('recargando');
 
       if(questionsState?.length >0){
@@ -101,9 +101,9 @@ const Container = () => {
         console.log('paso a false');
       }
       
-    }else{
-      navigate('/')
-    }
+    // }else{
+    //   navigate('/')
+    // }
 
   }, [questionsState, show]);
 
