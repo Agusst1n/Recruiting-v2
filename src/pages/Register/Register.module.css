@@ -42,7 +42,8 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: #093A3E;
+    /* background-color: #093A3E; */
+    background-color: rgba(0, 0, 0, 0.939);
     border-radius: 10px;
 }
 .register_form{
@@ -52,7 +53,10 @@
     flex-direction: column;
     gap: 20px;
 }
-
+.button_enviar{
+    width: 80px;
+    height: 30px;
+}
 .register_form input{
     border-top:none ;
     border-right:none ;
@@ -60,7 +64,7 @@
     height: 30px;
     color: rgba(255, 255, 255, 0.783);
     font-size: 1.1rem;
-    width: 270px;
+    width: 220px;
     background-color: rgba(0, 0, 0, 0.591);
     outline: none;
 }

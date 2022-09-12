@@ -29,10 +29,11 @@
     padding: 5px 5px 0 0;
 }
 
-.username{
+.username_container{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     width: 100%;
     height: 40px;
     outline: solid 1px rgba(255, 255, 255, 0.72);
@@ -56,4 +57,11 @@
     align-items: center;
     justify-content: center;
     outline: solid 1px rgba(255, 255, 255, 0.72);
+}
+.navbar_closeSesion button{
+    height: 35px;
+    width: 120px;
+    border: 1px solid white;
+    background-color: #242424;
+    font-size: 1rem;
 }

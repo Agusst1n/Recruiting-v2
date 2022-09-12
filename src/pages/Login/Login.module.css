@@ -47,8 +47,20 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: #093A3E;
+    /* background-color: #093A3E; */
+    background-color: rgba(0, 0, 0, 0.939);
     border-radius: 10px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_enviar{
+    width: 80px;
+    height: 30px;
 }
 
 .login_form input{
@@ -101,9 +113,3 @@
     right: 30px;
     animation: jump 5s linear infinite;
 }
-/* .login_blob{
-    background-image: url('https://res.cloudinary.com/dx0bwa7xp/image/upload/v1662945682/blob_cvppsl.png');
-    width: 80%;
-    background-size: cover;
-    background-repeat: no-repeat;
-} */

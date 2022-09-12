@@ -15,8 +15,8 @@ const AuthenticationProvider = ({ children }) => {
 
   const [doneStatus, setDoneStatus] = useState(false)
 
-  const KEY = 'AIzaSyBEpE0pAKS_Omypin8quNkwnxu_XszZvCA';
-
+  const KEY = 'AIzaSyBN-kqMVcMWr3CP1wPu2vZmgwrDUE8L1qI'
+              
   const [userToken, setUserToken] = useState(
     JSON.parse(localStorage.getItem('user')) || ''
   );

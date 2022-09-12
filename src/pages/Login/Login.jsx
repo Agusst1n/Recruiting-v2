@@ -38,7 +38,7 @@ function Login() {
             <input type="text" placeholder='Enter your username' name='username' onChange={handleChange}/>
             <input type="text" placeholder='Enter your email' name='email' onChange={handleChange}/>
             <input type="text" placeholder='Enter your password' name='password' onChange={handleChange}/>
-            <button type='submit'>Login</button>
+            <button type='submit' className={styles.button_enviar}>Login</button>
             <Link to={'/register'} className={styles.register_link}>Registrate</Link>
           </form>
       </div>

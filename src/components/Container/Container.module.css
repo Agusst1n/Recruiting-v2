@@ -27,6 +27,7 @@
     background-size: cover;
     background-position: center;
     overflow-y: scroll;
+    overflow-x: hidden;
     padding: 20px 0 0 0px;
     color: #ffffff;
 }
@@ -106,6 +107,7 @@
     position: relative;
     border-radius: 50%;
     background-color: white;
+    width: 250px;
 }
 
 .toggle_navbar{

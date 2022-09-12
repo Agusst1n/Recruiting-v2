@@ -34,8 +34,11 @@ const Container = () => {
     setQuestionsState
   } = useContext(QuestionsContext);
 
-  const { username, getResponses, userToken, doneStatus, setDoneStatus } =
-    useContext(AuthenticationContext);
+  const {
+    username, 
+    getResponses, 
+    doneStatus, 
+    setDoneStatus } = useContext(AuthenticationContext);
 
   const [pushToFirebase, setPushToFirebase] = useState(true);
 
@@ -44,9 +47,9 @@ const Container = () => {
 
   const pushDataFirebase = async () => {
     try {
-      console.log(userToken, 'USER TOKEEEN')
+      let user = JSON.parse(localStorage.getItem('user'))
       const res = await fetch(
-        `https://video-record-19df8-default-rtdb.firebaseio.com/users/${userToken.localId}.json?auth=${userToken.idToken}`,
+        `https://video-record-19df8-default-rtdb.firebaseio.com/users/${user.localId}.json?auth=${user.idToken}`,
         {
           method: 'POST',
           body: JSON.stringify({

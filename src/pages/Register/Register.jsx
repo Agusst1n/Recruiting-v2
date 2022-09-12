@@ -24,7 +24,7 @@ const Register = () => {
                 <input type="text" placeholder='Email' name='email' onChange={handleChange}/>
                 <input type="text" placeholder='Password' name='password' onChange={handleChange}/>
                 <input type="text" placeholder='Repeat password' name='password2' onChange={handleChange}/>
-                <button type="submit">Enviar</button>
+                <button type="submit" className={styles.button_enviar}>Enviar</button>
                 <div className={styles.login_link_container} >
                   <p>Ya tenes cuenta?</p>
                   <Link to={'/'} className={styles.login_link}>Login</Link>

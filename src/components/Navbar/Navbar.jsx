@@ -19,11 +19,11 @@ const Navbar = () => {
         <div className={styles.navbar_toggle} onClick={toggle_navbar}>
             <FaAlignRight size={25}/>
         </div>
-        <div className={styles.username}>
+        <div className={styles.username_container}>
             <div className={styles.username_icon}>
                 <img src={icon} alt="" width={40}/>
             </div>
-            <p>{username}</p>
+            <p className={styles.username}>{username}</p>
         </div>
         <div className={styles.navbar_closeSesion}>
           <button onClick={handleClose}>Cerrar sesion</button>
