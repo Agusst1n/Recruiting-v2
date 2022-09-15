@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import AuthenticationContext from '../../context/AuthenticationContext';
+// import AuthenticationContext from '../../context/AuthenticationContext';
 import QuestionsContext from '../../context/QuestionsContext';
 import Question from './Question/Question';
 
@@ -7,7 +7,7 @@ import styles from './Questions.module.css';
 
 const Questions = () => {
   const { questionsState,lottieCick } = useContext(QuestionsContext);
-  const {doneStatus} = useContext(AuthenticationContext)
+  // const {doneStatus} = useContext(AuthenticationContext)
 
 
   let questions = questionsState.length;

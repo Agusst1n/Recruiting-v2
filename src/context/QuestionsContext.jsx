@@ -5,12 +5,12 @@ const QuestionsContext = createContext();
 const questions = [
   {
     id: 1,
-    value: '¿Cual es tu video juego favorito?',
+    value: '¿Cual es tu ROL en el mundo IT?',
     name: 'Pregunta1'
   },
   {
     id: 2,
-    value: '¿Cual es tu serie favorita?',
+    value: '¿Como llegaste al mundo IT?',
     name: 'Pregunta2'
   },
   {
@@ -25,28 +25,63 @@ const questions = [
   }
 ];
 
+const introductionData = [
+  {
+    id: 0,
+    value: 'Hola Bienvenid@ a Recruiting!',
+    img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663219688/welcome_uty4aq.png',
+    name: 'Introduction0'
+  },
+  {
+    id:1,
+    value: 'Dejame explicarte brevemente como funciona la APP',
+    img:'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663224636/coffe_fr0ziz.png',
+    name: 'Introduction1'
+  },
+  {
+    id: 2,
+    value: 'Recruiting facilita el reclutamiento conectandote directamente con los reclutadores',
+    img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663219699/recruiting_yk0fct.png',
+    name: 'Introduction2'
+  },
+  {
+    id: 3,
+    value: 'Lo unico que tenes que hacer es grabarte respondiendo las preguntas que se te asignen',
+    img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663219810/rec_yckxpr.png',
+    name: 'Introduction3'
+  },
+  {
+    id: 4,
+    value: 'Al enviar las respuestas un reclutador las vera y evaluara si estas capacitado para algun puesto',
+    img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663219889/evaluando2_pfmka8.png',
+    name: 'Introduction4'
+  },
+  {
+    id: 5,
+    value: 'Esperamos que disfrutes la APP',
+    img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663220124/disfruta_syj5jd.png',
+    name: 'Introduction5'
+  }
+]
+
+const finishMessageData = [
+  {
+    id: 0,
+    value: 'Felicitaciones respondiste todas las preguntas!',
+    img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663226083/congratulations_cw7pgk.png',
+    name: 'Pregunta0'
+  },
+  {
+    id: 1,
+    value: 'Tus preguntas ya fueron enviadas para que las vea un reclutador',
+    img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663226219/Okey_roewry.png',
+    name: 'Pregunta1'
+  }
+]
+
 const QuestionsProvider = ({ children }) => {
 
   const [questionsState, setQuestionsState] = useState(questions);
-
-  let userData = JSON.parse(localStorage.getItem('user'))
-  
-  let Token = userData?.idToken
-
-  // const questionsFunc = async () =>{
-  //   try {
-      
-  //     const res = await fetch(`https://video-rec-2b0fb-default-rtdb.firebaseio.com/questions.json?auth=${Token}`)
-
-  //     const data = await res.json()
-
-  //     setQuestionsState(data)
-
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
 
   const [modalStatus, setModalStatus] = useState(false);
 
@@ -64,9 +99,15 @@ const QuestionsProvider = ({ children }) => {
 
   const intervalRef = useRef();
 
-
   const [repliedLastQuestion, setRepliedLastQuestion] = useState(false)
 
+ const [introductionState,setIntroductionState] = useState(introductionData)
+
+  const [finishIntroduction, setFinishIntroduction] = useState(true)
+
+  const [finishMessageState, setFinishMessageState] = useState(finishMessageData)
+
+  const [finishMessage, setFinishMessage] = useState(false)
 
 
   const toggle_navbar = () =>{
@@ -115,7 +156,17 @@ const QuestionsProvider = ({ children }) => {
         setSecondLottie,
         // questionsFunc,
         repliedLastQuestion,
-        setRepliedLastQuestion
+        setRepliedLastQuestion,
+        introductionState,
+        setIntroductionState,
+        finishIntroduction,
+        setFinishIntroduction,
+        finishMessageState,
+        setFinishMessageState,
+        finishMessage,
+        setFinishMessage
+        // finish,
+        // setFinish
       }}
     >
       {children}

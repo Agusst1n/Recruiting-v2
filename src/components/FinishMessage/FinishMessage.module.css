@@ -1,0 +1,61 @@
+.finishMessage_container{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.533);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.finishMessage_modal{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    height: 90vh;
+    background-image: url('https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663224306/bgGray_pxrfjn.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.finishMessage_image{
+    display: flex;
+    height: 350px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.finishMessage_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 1.3rem;
+}
+
+.finishMessage_button{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.finishMessage_button button{
+    height: 30px;
+    width: 80px;
+    background-color: rgba(255, 255, 255, 0.786);
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.finishMessage_button button:hover{
+    background-color: rgba(255, 255, 255, 0.915);
+}

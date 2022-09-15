@@ -26,7 +26,9 @@ const Modal = () => {
     resultQuestions,
     setResultQuestions,
     setShow,
-    setRepliedLastQuestion
+    setRepliedLastQuestion,
+    setFinish,
+    setFinishMessage
   } = useContext(QuestionsContext)
 
   const closeModal = () =>{
@@ -99,6 +101,8 @@ const Modal = () => {
       setModalStatus(false)
 
       console.log('Aca hay que pushear la data')
+
+      setFinishMessage(true)
 
       setRepliedLastQuestion(true)
     }
