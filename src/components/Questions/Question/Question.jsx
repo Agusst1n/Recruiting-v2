@@ -1,31 +1,28 @@
-import React, { useContext } from 'react'
-import QuestionsContext from '../../../context/QuestionsContext'
+import React, { useContext } from 'react';
+import QuestionsContext from '../../../context/QuestionsContext';
 
-import styles from './Question.module.css'
-
+import styles from './Question.module.css';
 
 const Question = (question) => {
+  const { setModalStatus, setActualQuestion, setLottieClick } =
+    useContext(QuestionsContext);
 
-  const {setModalStatus,setActualQuestion,setLottieClick} = useContext(QuestionsContext)
+  const { name, id, value } = question.question;
 
-  const {name,id,value} = question.question
+  const modal = () => {
+    setModalStatus(true);
+    setActualQuestion(id);
+  };
 
-  const modal = () =>{
-    console.log('click', id)
-    setModalStatus(true)
-    setActualQuestion(id)
-  }
-
-  const closeLottieClick = () =>{
-    setLottieClick(false)
-    console.log('onmouse')
-  }
+  const closeLottieClick = () => {
+    setLottieClick(false);
+  };
 
   return (
-    <div className={styles.question} onClick={modal} id={id}> 
-        <p onMouseEnter={closeLottieClick}>{value}</p>
+    <div className={styles.question} onClick={modal} id={id}>
+      <p onMouseEnter={closeLottieClick}>{value}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Question
+export default Question;

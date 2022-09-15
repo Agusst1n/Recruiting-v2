@@ -33,26 +33,29 @@ const introductionData = [
     name: 'Introduction0'
   },
   {
-    id:1,
+    id: 1,
     value: 'Dejame explicarte brevemente como funciona la APP',
-    img:'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663224636/coffe_fr0ziz.png',
+    img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663224636/coffe_fr0ziz.png',
     name: 'Introduction1'
   },
   {
     id: 2,
-    value: 'Recruiting facilita el reclutamiento conectandote directamente con los reclutadores',
+    value:
+      'Recruiting facilita el reclutamiento conectandote directamente con los reclutadores',
     img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663219699/recruiting_yk0fct.png',
     name: 'Introduction2'
   },
   {
     id: 3,
-    value: 'Lo unico que tenes que hacer es grabarte respondiendo las preguntas que se te asignen',
+    value:
+      'Lo unico que tenes que hacer es grabarte respondiendo las preguntas que se te asignen',
     img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663219810/rec_yckxpr.png',
     name: 'Introduction3'
   },
   {
     id: 4,
-    value: 'Al enviar las respuestas un reclutador las vera y evaluara si estas capacitado para algun puesto',
+    value:
+      'Al enviar las respuestas un reclutador las vera y evaluara si estas capacitado para algun puesto',
     img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663219889/evaluando2_pfmka8.png',
     name: 'Introduction4'
   },
@@ -62,7 +65,7 @@ const introductionData = [
     img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663220124/disfruta_syj5jd.png',
     name: 'Introduction5'
   }
-]
+];
 
 const finishMessageData = [
   {
@@ -77,10 +80,9 @@ const finishMessageData = [
     img: 'https://res.cloudinary.com/dx0bwa7xp/image/upload/v1663226219/Okey_roewry.png',
     name: 'Pregunta1'
   }
-]
+];
 
 const QuestionsProvider = ({ children }) => {
-
   const [questionsState, setQuestionsState] = useState(questions);
 
   const [modalStatus, setModalStatus] = useState(false);
@@ -99,20 +101,20 @@ const QuestionsProvider = ({ children }) => {
 
   const intervalRef = useRef();
 
-  const [repliedLastQuestion, setRepliedLastQuestion] = useState(false)
+  const [repliedLastQuestion, setRepliedLastQuestion] = useState(false);
 
- const [introductionState,setIntroductionState] = useState(introductionData)
+  const [introductionState, setIntroductionState] = useState(introductionData);
 
-  const [finishIntroduction, setFinishIntroduction] = useState(true)
+  const [finishIntroduction, setFinishIntroduction] = useState(true);
 
-  const [finishMessageState, setFinishMessageState] = useState(finishMessageData)
+  const [finishMessageState, setFinishMessageState] =
+    useState(finishMessageData);
 
-  const [finishMessage, setFinishMessage] = useState(false)
+  const [finishMessage, setFinishMessage] = useState(false);
 
-
-  const toggle_navbar = () =>{
-    setNavbarShow(!navbarShow)
-  }
+  const toggle_navbar = () => {
+    setNavbarShow(!navbarShow);
+  };
 
   const pauseConfetti = () => {
     let count = 0;
@@ -154,7 +156,6 @@ const QuestionsProvider = ({ children }) => {
         pauseConfetti,
         secondLottie,
         setSecondLottie,
-        // questionsFunc,
         repliedLastQuestion,
         setRepliedLastQuestion,
         introductionState,
@@ -165,8 +166,6 @@ const QuestionsProvider = ({ children }) => {
         setFinishMessageState,
         finishMessage,
         setFinishMessage
-        // finish,
-        // setFinish
       }}
     >
       {children}

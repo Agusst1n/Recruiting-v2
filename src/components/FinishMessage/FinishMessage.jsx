@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import QuestionsContext from '../../context/QuestionsContext';
 
 import styles from './FinishMessage.module.css';

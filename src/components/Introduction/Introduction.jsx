@@ -1,20 +1,15 @@
 import React from 'react';
+import { useContext, useState, useEffect } from 'react';
+import QuestionsContext from '../../context/QuestionsContext';
 
 import styles from './Introduction.module.css';
-
-//Images
-import welcome from '../../assets/welcome.png';
-import { useContext } from 'react';
-import QuestionsContext from '../../context/QuestionsContext';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 const Introduction = () => {
   const { introductionState, setIntroductionState, setFinishIntroduction } =
     useContext(QuestionsContext);
 
   const [introduction, setIntroduction] = useState();
-  const [buttonStatus, setButtonStatus] = useState(true)
+  const [buttonStatus, setButtonStatus] = useState(true);
 
   const getNeWIntroduction = () => {
     let firstIntroduction = introductionState[0];
@@ -23,10 +18,9 @@ const Introduction = () => {
     setIntroduction(firstIntroduction);
 
     filterIntroduction();
-    if(introductionState.length == 1){
-      setButtonStatus(false)
+    if (introductionState.length == 1) {
+      setButtonStatus(false);
     }
-
   };
 
   const filterIntroduction = () => {
@@ -53,7 +47,7 @@ const Introduction = () => {
     <div className={styles.introduction_container}>
       <div className={styles.introduction_modal}>
         <div className={styles.introduction_image}>
-          <img src={introduction?.img} alt="" height={300}/>
+          <img src={introduction?.img} alt="" height={300} />
         </div>
 
         <div className={styles.introduction_text}>
@@ -61,7 +55,9 @@ const Introduction = () => {
         </div>
 
         <div className={styles.introduction_button}>
-          <button onClick={getNeWIntroduction}>{buttonStatus? 'Siguente' : 'Terminar'}</button>
+          <button onClick={getNeWIntroduction}>
+            {buttonStatus ? 'Siguente' : 'Terminar'}
+          </button>
         </div>
       </div>
     </div>
